@@ -20,14 +20,12 @@ const MovieCard = ({ movie }) => {
       <div className='border-b py-4'>
         <h1 className='text-xl font-bold'>{show?.name || 'Movie Name'}</h1>
         <p className='text-base font-normal'>{`This is a ${show?.type} type ${show?.language} movie, Premiered on ${show?.premiered}.`}</p>
-        {/* <p className='flex items-center gap-2 text-lg font-bold'> */}
         <ReactStars
           value={show?.rating?.average || 0}
           size={20}
           isHalf={true}
           edit={false}
         />
-        {/* </p> */}
       </div>
       {/* movie location and available time  */}
       <div className='space-y-2 py-4 text-gray-600'>

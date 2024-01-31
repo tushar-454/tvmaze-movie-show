@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import MovieShow from '../Components/MovieShow';
 import Root from '../Layout/root';
 import Home from '../Page/Home';
+import MovieShow from '../Page/MovieShow';
 
 const routes = createBrowserRouter([
   {
