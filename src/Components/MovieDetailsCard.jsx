@@ -15,7 +15,7 @@ const MovieDetailsCard = ({ singleMovie }) => {
           {/* single movie left side poster */}
           <div className='w-full md:w-1/2 lg:w-1/3'>
             <img
-              src={image?.original}
+              src={image?.original || 'https://cutt.ly/NwZBfaFg'}
               alt={`poster of ${name}`}
               className='h-[500px] w-full rounded-lg object-contain'
             />
