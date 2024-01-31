@@ -1,0 +1,13 @@
+- yarn add @stripe/react-stripe-js
+- yarn add @stripe/stripe-js
+
+- yarn add @tanstack/react-query
+  import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+  const queryClient = new QueryClient()
+  <QueryClientProvider client={queryClient}>
+    
+  </QueryClientProvider>
+
+- yarn add axios
+- yarn add firebase
+- yarn add sweetalert
