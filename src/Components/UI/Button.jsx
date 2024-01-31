@@ -6,7 +6,7 @@ const Button = ({ path, children, ...rest }) => {
     <Link to={path}>
       <button
         {...rest}
-        className='hover:bg-deep-teal-100 active:bg-deep-teal-200 mt-4 w-full rounded-full bg-white p-2 transition'
+        className='hover:bg-deep-teal-100 active:bg-deep-teal-200 bg-deep-teal-100/50 mt-4 w-full rounded-full p-2 transition'
       >
         {children}
       </button>

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+import MovieShow from '../Components/MovieShow';
 import Root from '../Layout/root';
 import Home from '../Page/Home';
 
@@ -10,6 +11,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'movie/:movieId',
+        element: <MovieShow />,
       },
     ],
   },

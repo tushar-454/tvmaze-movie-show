@@ -11,7 +11,7 @@ const MovieCard = ({ movie }) => {
       {/* movie image  */}
       <div>
         <img
-          src={show?.image?.original || 'https://cutt.ly/gwZVF09t'}
+          src={show?.image?.original || 'https://cutt.ly/NwZBfaFg'}
           alt={`${show?.name} movie poster`}
           className='h-[500px] w-full cursor-pointer rounded-xl object-cover transition-all hover:object-contain'
         />
@@ -49,6 +49,14 @@ const MovieCard = ({ movie }) => {
         <div className='flex items-center gap-3 text-base font-normal'>
           <MdOutlineSportsScore className='text-xl' />
           <p>{score || 0}</p>
+        </div>
+        {/* movie show genres  */}
+        <div className='flex flex-wrap gap-4'>
+          {show?.genres?.map((genre, index) => (
+            <span key={index} className='rounded-full bg-white px-3 py-1'>
+              {genre}
+            </span>
+          ))}
         </div>
       </div>
       {/* movie booked button  */}
