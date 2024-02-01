@@ -40,7 +40,10 @@ const MovieDetailsCard = ({ singleMovie }) => {
             <Button
               path={''}
               style={{ width: '200px' }}
-              onClick={() => setIsShowBookForm(!isShowBookForm)}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setIsShowBookForm(!isShowBookForm);
+              }}
             >
               Book Now
             </Button>

@@ -3,12 +3,12 @@ import { RxCross2 } from 'react-icons/rx';
 import Input from './UI/Input';
 const BookedForm = ({ name, type, language, setIsShowBookForm }) => {
   return (
-    <div className='absolute left-0 top-0 h-screen w-screen bg-[#00000050]'>
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] rounded-lg border bg-white p-10 shadow-2xl'>
-        <div className='relative'>
+    <div className='absolute left-0 top-0 flex h-screen w-screen items-start justify-center bg-[#00000050] xl:items-center'>
+      <div className='my-10 rounded-lg border bg-white shadow-2xl'>
+        <div className='relative overflow-auto p-10'>
           {/* minimize the form icon */}
           <div
-            className='absolute -right-6 -top-6'
+            className='absolute right-2 top-2'
             onClick={() => setIsShowBookForm(false)}
           >
             <RxCross2 className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black text-3xl font-bold text-white transition-all hover:scale-105 active:scale-95' />
