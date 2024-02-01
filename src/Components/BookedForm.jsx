@@ -4,7 +4,13 @@ import toast from 'react-hot-toast';
 import { RxCross2 } from 'react-icons/rx';
 import bookingFromError from '../Utils/bookingFromError';
 import Input from './UI/Input';
-const BookedForm = ({ name, type, language, setIsShowBookForm }) => {
+const BookedForm = ({
+  setTickets,
+  name,
+  type,
+  language,
+  setIsShowBookForm,
+}) => {
   const {
     register,
     handleSubmit,
@@ -17,6 +23,8 @@ const BookedForm = ({ name, type, language, setIsShowBookForm }) => {
       movieName: name,
       movieType: type,
       movieLanguage: language,
+      seat: Math.floor(Math.random() * 1000),
+      hall: Math.random() > 0.5 ? 'Hall 1' : 'Hall 2',
     };
     // store ticket information in local storage
     if (localStorage.getItem('ticketInformation') === null) {
@@ -24,6 +32,7 @@ const BookedForm = ({ name, type, language, setIsShowBookForm }) => {
         'ticketInformation',
         JSON.stringify([ticketInformation]),
       );
+      setTickets([ticketInformation]);
     } else {
       const existingTicket = JSON.parse(
         localStorage.getItem('ticketInformation'),
@@ -32,6 +41,7 @@ const BookedForm = ({ name, type, language, setIsShowBookForm }) => {
         'ticketInformation',
         JSON.stringify(existingTicket.concat(ticketInformation)),
       );
+      setTickets(existingTicket.concat(ticketInformation));
     }
     toast.success('Ticket Booked Successfully');
     setIsShowBookForm(false);
@@ -138,5 +148,6 @@ BookedForm.propTypes = {
   type: PropTypes.string.isRequired,
   language: PropTypes.string.isRequired,
   setIsShowBookForm: PropTypes.func.isRequired,
+  setTickets: PropTypes.func.isRequired,
 };
 export default BookedForm;

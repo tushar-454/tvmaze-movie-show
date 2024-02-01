@@ -4,7 +4,7 @@ import ReactStars from 'react-rating-stars-component';
 import BookedForm from './BookedForm';
 import Button from './UI/Button';
 
-const MovieDetailsCard = ({ singleMovie }) => {
+const MovieDetailsCard = ({ setTickets, singleMovie }) => {
   const [isShowBookForm, setIsShowBookForm] = useState(false);
   const { name, type, language, premiered, image, summary, rating } =
     singleMovie;
@@ -52,6 +52,7 @@ const MovieDetailsCard = ({ singleMovie }) => {
       </div>
       {isShowBookForm && (
         <BookedForm
+          setTickets={setTickets}
           name={name}
           type={type}
           language={language}
@@ -63,5 +64,6 @@ const MovieDetailsCard = ({ singleMovie }) => {
 };
 MovieDetailsCard.propTypes = {
   singleMovie: PropTypes.object.isRequired,
+  setTickets: PropTypes.func.isRequired,
 };
 export default MovieDetailsCard;
